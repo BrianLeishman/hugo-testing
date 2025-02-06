@@ -4,7 +4,6 @@ disableKinds = ['rss','sitemap','taxonomy','term']
 printPathWarnings = true
 
 defaultContentLanguage = 'en'
-defaultContentLanguageInSubdir = true
 
 [languages.en]
 languageCode = 'en-US'
@@ -19,3 +18,26 @@ languageDirection = 'ltr'
 languageName = 'Deutsch'
 weight = 2
 title = 'Hugo GitHub Issue #13346 (de)'
+
+
+# EN content
+[[module.mounts]]
+source = 'content/en'
+target = 'content'
+lang = 'en'
+
+# DE content
+[[module.mounts]]
+source = 'content/de'
+target = 'content'
+lang = 'de'
+
+#------------------------------------------------------------------------------
+# Fill in the missing translations
+#------------------------------------------------------------------------------
+
+# This fills in the gaps in DE content with EN content.
+[[module.mounts]]
+source = 'content/en'
+target = 'content'
+lang = 'de'
